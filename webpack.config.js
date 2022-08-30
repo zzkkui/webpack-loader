@@ -11,7 +11,17 @@ module.exports = {
     rules: [
       {
         test: /\.txt$/i,
-        use: ["a-loader.ts", "b-loader.ts", "c-loader.ts"],
+        use: ["a-loader.ts"],
+        enforce: "pre",
+      },
+      {
+        test: /\.txt$/i,
+        use: ["b-loader.ts"],
+      },
+      {
+        test: /\.txt$/i,
+        use: ["c-loader.ts"],
+        enforce: "post",
       },
     ],
   },

@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((module) => {
 
-eval("module.exports = 'bLoader Pitching Loader->aLoader]'\n\n//# sourceURL=webpack://loader1/./src/data.txt?");
+eval("module.exports = 'hello webpack loaderaLoader]bLoader->[cLoader->'\n\n//# sourceURL=webpack://loader1/./src/data.txt?");
 
 /***/ }),
 
