@@ -21,7 +21,7 @@ module.exports = {
       {
         test: /\.txt$/i,
         use: ["c-loader.ts"],
-        enforce: "post",
+        enforce: "pre",
       },
     ],
   },
