@@ -10,6 +10,37 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.less$/i,
+        use: ['style-loader', {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true
+          }
+        }, {
+            loader: 'less-loader',
+            options: {
+              sourceMap: true
+            }
+          }]
+        // use: [
+        //   // compiles Less to CSS
+        //   "css-loader",
+        //   "less-loader",
+        // ],
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader/src/index.js',
+          options: {
+            presets: [
+              ['@babel/preset-env', { targets: "defaults" }]
+            ]
+          }
+        }
+      },
+      {
         test: /\.txt$/i,
         use: ["a-loader.ts"],
         enforce: "pre",
@@ -21,7 +52,7 @@ module.exports = {
       {
         test: /\.txt$/i,
         use: ["c-loader.ts"],
-        enforce: "pre",
+        enforce: "post",
       },
     ],
   },
@@ -29,6 +60,7 @@ module.exports = {
     modules: [
       path.resolve(__dirname, "node_modules"),
       path.resolve(__dirname, "loaders"),
+      path.resolve(__dirname, "packages"),
     ],
   },
 };
