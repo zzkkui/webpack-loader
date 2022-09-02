@@ -15,7 +15,18 @@
   \**********************/
 /***/ ((module) => {
 
-eval("module.exports = 'bLoader.pitch[cLoader->'\n\n//# sourceURL=webpack://loader1/./src/data.txt?");
+eval("module.exports = 'hello webpack loader'\n\n//# sourceURL=webpack://loader1/./src/data.txt?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("\n\nvar _data = _interopRequireDefault(__webpack_require__(/*! ./data.txt */ \"./src/data.txt\"));\n\nvar _index = _interopRequireDefault(__webpack_require__(/*! ./index.less */ \"./src/index.less\"));\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n// console.log(styles)\n// console.log(styles.toString())\nvar msgElement = document.querySelector(\"#message\");\nmsgElement.innerText = _data.default;\nvar obj = {\n  a: 1\n};\n\nvar obj2 = _objectSpread(_objectSpread({}, obj), {}, {\n  b: 2\n});\n\nconsole.log(obj2);\n\n//# sourceURL=webpack://loader1/./src/index.js?");
 
 /***/ }),
 
@@ -126,17 +137,6 @@ eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj
 
 "use strict";
 eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\n\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://loader1/./node_modules/.pnpm/style-loader@3.3.1_webpack@5.74.0/node_modules/style-loader/dist/runtime/styleTagTransform.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _data_txt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data.txt */ \"./src/data.txt\");\n/* harmony import */ var _data_txt__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_data_txt__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.less */ \"./src/index.less\");\n\n // console.log(styles)\n// console.log(styles.toString())\n\nconst msgElement = document.querySelector(\"#message\");\nmsgElement.innerText = (_data_txt__WEBPACK_IMPORTED_MODULE_0___default());\n\n//# sourceURL=webpack://loader1/./src/index.js?");
 
 /***/ })
 

@@ -29,31 +29,41 @@ module.exports = {
         // ],
       },
       {
-        test: /\.m?js$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader/src/index.js',
-          options: {
-            presets: [
-              ['@babel/preset-env', { targets: "defaults" }]
-            ]
-          }
+        loader: 'simple-babel-loader.js',
+        options: {
+          presets: [
+            ['@babel/preset-env', { targets: "ie >= 11" }]
+          ]
         }
       },
+      // {
+      //   test: /\.m?js$/,
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: 'babel-loader/src/index.js',
+      //     options: {
+      //       presets: [
+      //         ['@babel/preset-env', { targets: "ie >= 11" }]
+      //       ]
+      //     }
+      //   }
+      // },
       {
         test: /\.txt$/i,
         use: ["a-loader.ts"],
         enforce: "pre",
       },
-      {
-        test: /\.txt$/i,
-        use: ["b-loader.ts"],
-      },
-      {
-        test: /\.txt$/i,
-        use: ["c-loader.ts"],
-        enforce: "post",
-      },
+      // {
+      //   test: /\.txt$/i,
+      //   use: ["b-loader.ts"],
+      // },
+      // {
+      //   test: /\.txt$/i,
+      //   use: ["c-loader.ts"],
+      //   enforce: "post",
+      // },
     ],
   },
   resolveLoader: {
